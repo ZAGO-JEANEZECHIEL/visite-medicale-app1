@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Logintitle from './logintitle'
-import Form from './view/form'
+import Formulaire from './view/formulaire'
+
+
 
 export default function LoginForm(){
   return(
@@ -16,7 +18,7 @@ export default function LoginForm(){
          </div>
          <div className='w-full items-center justify-center pt-7'>
          <Logintitle/>
-         <Form/>
+      <Formulaire/>
          </div>
     </div>
   )

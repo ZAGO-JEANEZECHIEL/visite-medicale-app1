@@ -1,9 +1,8 @@
+import LoginFormView from "@/features/login/components/view/login-form-view";
 
-import LoginFormView from "@/features/login/components/view/login-form-view"
 
-export default function LoginPage() {
+export default function Page() {
   return (
-        <LoginFormView />
-  
+<LoginFormView/>
   )
 }
