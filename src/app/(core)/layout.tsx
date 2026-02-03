@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-screen *:h-full">
+    <div className="flex h-screen *:h-full ">
       {/* side bar */}
 
-      <nav className="w-70   flex flex-col items-center gap-14">
-        <div className="w-full flex items-center justify-center pt-5">
+      <aside className="w-60  flex flex-col items-center gap-7  ">
+        <div className="w-full flex items-center justify-center pt-5 ">
           <div className="w-55 h-17  overflow-hidden  relative ">
             <Image
               src="/visiteicon.png"
@@ -17,28 +17,28 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             />
           </div>
         </div>
-
-        <div className=" h-0.5 flex items-center justify-center ">
+     <div className="flex flex-col w-full h-full gap-10 px-5">
+        <div className=" h-0.5 flex ">
           <Link
             href="/tableau-de-bord"
-            className=" text-black hover:text-white  bg-white hover:bg-orange-500   rounded-lg  py-4 px-12 flex items-center  gap-3"
+            className=" text-black hover:text-white  bg-white hover:bg-orange-500   rounded-lg px-4  py-5  flex items-center gap-3"
           >
-            <div className="w-fit bg-amber-500">
+            
               <Image
                 src="/dashboard.png"
                 alt="Picture of the author"
                 width={10}
                 height={10}
-                className="h-5 w-5 object-cover "
+                className="h-5 w-5 object-cover bg-orange-400 "
               />
-            </div>
-            Dashboard
+          
+            Tableau de bord 
           </Link>
         </div>
-        <div className=" h-0.5 flex items-center justify-center">
+        <div className=" h-0.5 flex ">
           <Link
             href="/campagne"
-            className=" text-black hover:text-white  bg-white hover:bg-orange-500    rounded-lg px-12 py-4 flex items-center  gap-3"
+            className=" text-black hover:text-white  bg-white hover:bg-orange-500  rounded-lg  px-4  py-5 flex items-center  gap-3"
           >
             <Image
               src="/campagne.png"
@@ -50,10 +50,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             Campagnes
           </Link>
         </div>
-        <div className=" h-0.5 flex items-center justify-center ">
+        <div className=" h-0.5 flex ">
           <Link
             href="/employees"
-            className="  text-black hover:text-white  bg-white hover:bg-orange-500    rounded-lg px-12 py-4 flex items-center  gap-3"
+            className="  text-black hover:text-white  bg-white hover:bg-orange-500    rounded-lg  px-4  py-5  flex items-center  gap-3"
           >
             <Image
               src="/emp.png"
@@ -65,10 +65,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             Employées
           </Link>
         </div>
-        <div className=" h-0.5 flex items-center justify-center ">
+        <div className=" h-0.5 flex ">
           <Link
             href="/tache"
-            className=" text-black hover:text-white    bg-white hover:bg-orange-500   rounded-lg px-13 py-4 flex items-center  gap-3"
+            className=" text-black hover:text-white    bg-white hover:bg-orange-500   rounded-lg  px-4  py-5  flex items-center  gap-3"
           >
             <Image
               src="/tache.png"
@@ -80,10 +80,44 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             Mes tâche
           </Link>
         </div>
-      </nav>
+        </div>
+        <div className="w-full flex flex-col gap-5 pb-2">
+          <div className="w-full flex flex-col gap-2">
+          <div className="w-full flex items-center justify-center gap-3 px-5">
+            <div className="w-5 h-6  overflow-hidden  relative">
+              <Image
+                src="/phone.png"
+                alt="Picture of the doctor"
+                fill
+                className="h-7 w-5 object-fit"
+              />
+            </div>
+            <h3 className="text-sm w-full ">Assistance technique</h3>
+          </div>
+          <div className="w-full pl-8">
+          <div className="w-35 rounded-1 border-[1] text-green-500"></div>
+          </div>
+          </div>
+         <div className="w-full  flex items-center justify-center ">
+            <div className="w-20 h-8  overflow-hidden  relative">
+              <Image
+                src="/cie.png"
+                alt="Picture of the doctor"
+                fill
+                className="h-10 w-10  object-fit"
+              />
+            </div>
+          </div>
+          </div>
+      </aside>
       {/* side bar */}
+       
       <main className="w-full h-screen flex flex-col">
-        <div className="w-full bg-white h-17">header</div>
+       <div className="w-full h-15 bg-amber-100 flex items-center justify-end">
+          header
+          <div className="w-10  h-10 rounded-full bg-blue-300">icon</div>
+          </div>
+         
         <div className="bg-gray-100 flex-1 p-7">
           {/* <div className="w-full h-15 bg-green-700 rounded-md">gnjgnlk</div> */}
 
