@@ -48,7 +48,7 @@ export default function Formulaire() {
             
               />
             </div>
-            <div className="w-full h-0.5 bg-orange-400"></div>
+            <div className="w-full h-0.5 bg-orange-500"></div>
           </div>
           <div className="w-full ">
             <div className="flex items-center ">
@@ -64,17 +64,16 @@ export default function Formulaire() {
               <Input
                 type="text"
                 placeholder="Mot de passe"
-                className=" border-none  w-80"
-                
+                className=" border-none  w-80" 
               />
             </div>
-            <div className="w-full h-0.5 bg-orange-400"></div>
+            <div className="w-full h-0.5 bg-orange-500"></div>
           </div>
           <div className="flex items-center justify-center w-full pt-13">
             <Link href="/tableau-de-bord" className="w-full">
               <Button
                 type="submit"
-                className="bg-orange-400 text-white/70 w-full h-10 rounded-none"
+                className="bg-orange-500 text-white/70 w-full h-10 rounded-none"
               >
                 Se Connecter
               </Button>

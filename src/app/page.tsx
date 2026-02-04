@@ -14,6 +14,6 @@ export default function Home() {
     //     />
     //   </div>
     // </Link>
-    <div></div>
+    <div  className="w-full h-screen bg-blue-100"></div>
   );
 }
