@@ -1,5 +1,3 @@
-export default function Page(){
-    return(
-        <div className="text-blue-500 text-2xl">employees page</div>
-    )
+export default function employeesPage() {
+  return <div className="text-blue-500 text-2xl">employees page</div>;
 }
