@@ -2,7 +2,7 @@ import { Plus } from "lucide-react";
 import Image from "next/image";
 import Button from "../components/button";
 import Card from "../components/card";
-import GroupCard from "../components/group-card";
+import { Chart } from "../components/chart";
 
 export const groupData = [
   {
@@ -70,7 +70,7 @@ export const cardData = [
 const DashboardViews = () => {
   return (
     <div className="flex flex-col">
-      <div className="w-full flex items-center justify-between h-[55px] bg-green-900 rounded-md pl-3 pr-10">
+      <div className="w-full flex items-center justify-between h-13.75 bg-green-900 rounded-md pl-3 pr-10">
         <div className="relative inline-block">
           <select className="block appearance-none text-white text-[14px] bg-green-800 border border-green-900 rounded-md py-1.5 px-4 pr-8 shadow-md focus:outline-none">
             <option value="2020">2020</option>
@@ -94,11 +94,11 @@ const DashboardViews = () => {
             </svg>
           </div>
         </div>
-        <div className="text-white w-[100px] flex flex-end items-center justify-end">
+        <div className="text-white `w-[100px]`flex flex-end items-center justify-end">
           <Image src="/charg.png" alt="charg" width={30} height={30} />
         </div>
       </div>
-      <div className="flex items-center  gap-5 mt-5 mb-5 bg-white-100">
+      <div className="w-full h-23.75 mt-5  grid  grid-flow-row grid-cols-5 gap-4 mb-15">
         {cardData.map((card, index) => (
           <Card
             key={index}
@@ -107,30 +107,13 @@ const DashboardViews = () => {
             description={card.description}
           />
         ))}
-        <div className="bg-[url('/comprime.png')] bg-cover bg-center flex items-center justify-center gap-3 px-7 py-11 rounded-md w-[465px]  border-t-none border-l-none border-r-none border-b-2  border-gray-300 rounded-md ">
+        <div className="col-span-2 bg-[url('/comprime.png')] bg-cover bg-center flex items-center justify-center gap-3 px-7 py-11 rounded-md  border-t-none border-l-none border-r-none border-b-2  border-gray-300">
           <Button icons={<Plus />} title={"Nouvelle campagne"} />
         </div>
       </div>
-      <div className="flex  w-full   rounded-md">
-        <div className=" w-full flex gap-3">
-          <div className="flex flex-col ">
-            <div className="w-full flex">
-              {groupData.map((group, index) => (
-                <GroupCard
-                  key={index}
-                  title={group.title}
-                  description={group.description}
-                  pourcentage={group.pourcentage}
-                  annonce={group.annonce}
-                  nombre={group.nombre}
-                  tem={""}
-                />
-              ))}
-            </div>
-            <table className="bg-gray-300 flex-1 mr-2">table</table>
-          </div>
-          <div className="w-[300px] h-[400px] bg-gray-200">diagramme</div>
-        </div>
+      <div className=" w-full grid  grid-flow-row grid-cols-4 gap-4">
+        <div className="bg-gray-200 col-span-3 p-5">12</div>
+        <Chart data={[]} />
       </div>
     </div>
   );
