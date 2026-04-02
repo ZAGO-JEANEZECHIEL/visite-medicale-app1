@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { Pie, PieChart } from "recharts";
 
@@ -16,15 +17,14 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@/components/ui/chart";
+import Legend from "./legend";
 
 export const description = "A donut chart";
 
 const chartData = [
-  { browser: "chrome", visitors: 275, fill: "orange" },
-  { browser: "safari", visitors: 200, fill: "yellow" },
-  { browser: "firefox", visitors: 187, fill: "green" },
-  // { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  // { browser: "other", visitors: 90, fill: "var(--color-other)" },
+  { browser: "chrome", visitors: 150, fill: "#EE9430" },
+  { browser: "safari", visitors: 300, fill: "#DCE001" },
+  { browser: "firefox", visitors: 100, fill: "#2EB166" },
 ];
 
 interface PieData {
@@ -43,37 +43,29 @@ const chartConfig = {
   },
   chrome: {
     label: "Chrome",
-    color: "orange",
+    color: "#EE9430",
   },
   safari: {
     label: "Safari",
-    color: "yellow",
+    color: "#DCE001",
   },
   firefox: {
     label: "Firefox",
-    color: "green",
+    color: "#2EB166",
   },
-  // edge: {
-  //   label: "Edge",
-  //   color: "var(--chart-4)",
-  // },
-  // other: {
-  //   label: "Other",
-  //   color: "var(--chart-5)",
-  // },
 } satisfies ChartConfig;
 
 export function Chart({ data }: Props) {
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-col border border-amber-200 shadow ">
       <CardHeader className="text-center pb-0">
-        <CardTitle>Couverture campagnes</CardTitle>
+        <CardTitle className="text-xl">Couverture campagnes</CardTitle>
         <CardDescription></CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square max-h-62.5"
+          className="mx-auto aspect-square max-h-60"
         >
           <PieChart>
             <ChartTooltip
@@ -84,10 +76,13 @@ export function Chart({ data }: Props) {
               data={chartData}
               dataKey="visitors"
               nameKey="browser"
-              innerRadius={70}
+              innerRadius={65}
             />
           </PieChart>
         </ChartContainer>
+        <div className="w-full flex  items-center justify-center">
+          <Legend />
+        </div>
       </CardContent>
       <div className="flex items-center gap-6 overflow-x-auto px-4">
         {data.map((item, index) => (
@@ -103,13 +98,17 @@ export function Chart({ data }: Props) {
           </div>
         ))}
       </div>
-      <CardFooter className="flex-col gap-2 text-sm">
-        {/* <div className="flex items-center gap-2 leading-none font-medium">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+
+      <CardFooter className="w-full flex flex-col items-center pt-5 ">
+        <div className="flex item-center justify-center ">
+          <Image
+            src="/plus.png"
+            alt="logo"
+            width={140}
+            height={150}
+            className="overflow-hidden"
+          />
         </div>
-        <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
-        </div> */}
       </CardFooter>
     </Card>
   );

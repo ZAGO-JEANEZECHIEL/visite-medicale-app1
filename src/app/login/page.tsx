@@ -5,72 +5,91 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="w-full flex h-screen">
-      <div className="w-1/2">
+    <div className="w-full min-h-screen flex flex-col lg:flex-row">
+      {/* Image (cachée sur mobile) */}
+      <div className="hidden lg:block lg:w-1/2 h-screen">
         <Image
           src="/doctor.png"
           alt="Office Doctor"
           width={500}
           height={500}
-          className="w-full"
+          className="w-full h-full object-cover"
         />
       </div>
-      <div className="w-1/2 px-40">
-        <div className="pt-15 flex item-center justify-center">
+
+      {/* Formulaire */}
+      <div className="w-full lg:w-1/2  sm:px-10 lg:px-20 flex flex-col h-full">
+        {/* Logo */}
+        <div className="flex items-center justify-center mb-13 pt-15">
           <Image
             src="/visiteicon.png"
             alt="logo"
-            width={300}
-            height={300}
-            className="overflow-hidden"
+            width={200}
+            height={200}
+            className="w-32 sm:w-40 lg:w-52 h-auto"
           />
         </div>
-        <div className="w-full pb-10">
-          <h3 className=" w-full flex items-center justify-center pt-10 font-semibold mb-7">
+
+        {/* Texte */}
+        <div className="text-center mb-20">
+          <h3 className="font-semibold text-sm sm:text-base lg:text-lg mb-3">
             Bienvenue sur la plateforme de suivi des visites médicales
           </h3>
-          <p className="w-full text-center text-[12px]">
-            vous devez saisir vos identifiants afin <br /> d’accéder aux fiches
-            médicales du personnel
+          <p className="text-xs sm:text-sm text-gray-600">
+            Vous devez saisir vos identifiants afin <br />
+            d’accéder aux fiches médicales du personnel
           </p>
         </div>
-        <form action="" className="pb-10">
-          {/* email */}
-          <div className="w-full">
-            <div className="w-full flex items-center  mt-5">
+
+        {/* Form */}
+        <form className="flex flex-col gap-10 px-30">
+          {/* Email */}
+          <div>
+            <div className="flex items-center gap-2">
               <Image src="/contact.png" alt="user" height={20} width={20} />
-              <Input type="text" placeholder="Email" className=" border-none" />
-            </div>
-            <div className="w-full border text-orange-400"></div>
-          </div>
-          {/* password */}
-          <div className="w-full pb-7">
-            <div className="w-full flex items-center mt-10">
-              <Image src="/password.png" alt="user" height={20} width={20} />
               <Input
                 type="text"
-                placeholder="Mot de passe"
-                className=" border-none"
+                placeholder="Email"
+                className="border-none focus-visible:ring-0"
               />
             </div>
-            <div className="w-full border text-orange-400 mb-5"></div>
+            <div className="border border-orange-400 mt-1"></div>
           </div>
-          <Link href="/dashboard">
+
+          {/* Password */}
+          <div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/password.png"
+                alt="password"
+                height={20}
+                width={20}
+              />
+              <Input
+                type="password"
+                placeholder="Mot de passe"
+                className="border-none focus-visible:ring-0"
+              />
+            </div>
+            <div className="border border-orange-400 mt-1"></div>
+          </div>
+
+          {/* Bouton */}
+          <Link href="/dashboard" className="mt-10 mb-15">
             <button
               type="submit"
-              className="w-full bg-orange-400 text-white py-2  mt-5 hover:bg-orange-500 transition-colors"
+              className="w-full bg-orange-400 text-white py-2  hover:bg-orange-500 transition"
             >
               Se connecter
             </button>
           </Link>
         </form>
-        <div className="w-full flex flex-col items-center justify-center mt-25 mb-25">
-          <p className="w-full text-center text-[12px] ">
-            Mot de passe oublié ?
-          </p>
-          <div className="w-[120px] border text-green-500"></div>
-        </div>
-        <div className="w-full flex items-center justify-center">
+        {/* Footer */}
+        <div className="flex flex-col items-center h-full mt-6 md:gap-83 gap-46 lg:gap-50">
+          <div className="text-center flex flex-col items-center">
+            <p className="text-xs sm:text-sm">Mot de passe oublié ?</p>
+            <div className="w-30 border border-green-500 mx-auto mt-1"></div>
+          </div>
           <Image src="/cie.png" alt="logo" width={70} height={30} />
         </div>
       </div>

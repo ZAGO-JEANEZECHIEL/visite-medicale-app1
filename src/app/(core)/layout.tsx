@@ -32,9 +32,9 @@ export const menuData = [
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-screen *:h-full">
+    <div className="flex h-screen *:h-full w-ull">
       {/* side bar */}
-      <div className="flex flex-col justify-between">
+      <div className="flex flex-col h-full justify-between">
         <div className="w-50  flex flex-col items-center gap-7">
           <div className="w-full flex items-center justify-center pt-5 ">
             <div className="w-45 h-12  overflow-hidden  relative ">
@@ -79,21 +79,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               width={20}
               height={20}
             />
-            <p
-              className="text-[13px] text-gray-900 font-semibold hover:text-gray-7
-          00"
-            >
+            <p className="text-[13px] text-gray-900 font-semibold hover:text-gray-700">
               Assistance Technique
             </p>
           </div>
-          <div className="w-[150px] text-green-600 border-1 mb-10"></div>
+          <div className="w-37.5 text-green-600 border mb-10"></div>
           <div className="w-full flex items-center justify-center mb-2">
             <Image src="/cie.png" alt="cie" width={80} height={7} />
           </div>
         </div>
       </div>
-      <main className="w-full h-screen flex flex-col">
-        <div className="w-full h-15 bg-white-100 flex items-center justify-end">
+      <main className="w-full  flex flex-col">
+        <div className="w-full h-15 bg-white p-2 flex items-center justify-end">
           <div className="w-6 h-6 mr-5  overflow-hidden  relative">
             <Image
               src="/setting.png"
@@ -125,7 +122,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <p className="text-xs text-gray-500">Médecin</p>
           </div>
         </div>
-        <div className="bg-gray-100 flex-1 p-7">{children}</div>
+        <div className="bg-[#F2F5F3] flex-1 ">{children}</div>
       </main>
     </div>
   );
